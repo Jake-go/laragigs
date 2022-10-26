@@ -1,6 +1,10 @@
-<h1><?php echo $heading; ?></h1>
+@extends('layout')
+
+@section('content')
+<h1>{{$heading}} </h1>
 
 @unless(count($listings) == 0)
+
 @foreach($listings as $listing)
     <h2>
         <a href="/listing/{{$listing['id']}}">{{$listing['title']}}</a>
@@ -13,3 +17,5 @@
 @else
     <p>No listings found</p>
 @endunless
+
+@endsection
